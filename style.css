@@ -31,6 +31,8 @@
     --radius: 0.5rem;
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    --navbar-height: --navbar-height;
 }
 
 /* ===========global setting============= */
@@ -68,13 +70,13 @@ h2 {
 
 .section {
     padding: 5rem, 0;
-    scroll-margin-top: 4rem;
+    scroll-margin-top: --navbar-height;
     /* height: 95vh; */
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: --navbar-height;
 }
 
 .section-title h2 {
@@ -163,7 +165,7 @@ service
 @media(min-width:768px) {
     .section-center.services-center {
         display: flex;
-        margin-bottom: 4rem;
+        margin-bottom: --navbar-height;
     }
 
     article.service {
@@ -178,7 +180,7 @@ service
         background-color: var(--clr-primary-5);
         color: var(--clr-primary-10);
         padding: 0.5rem;
-        height: 4rem;
+        height: --navbar-height;
     }
 
     .service-info {
@@ -192,7 +194,7 @@ service
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: --navbar-height;
     }
 
     .service-icon {
@@ -201,7 +203,7 @@ service
         background-color: var(--clr-primary-5);
         color: var(--clr-primary-10);
         padding: 0.5rem;
-        height: 4rem;
+        height: --navbar-height;
         margin-bottom: 10px;
     }
 
@@ -229,8 +231,7 @@ service
     }
 
     .tour-card {
-        width: 30%;
-        /* width: 350px; */
+        width: calc(100vw - 2rem) / 3;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -320,19 +321,18 @@ service
     .tour-img-container {
         flex: 1 0 30%;
         position: relative;
-        height: 13rem;
+        height: calc(100vh - --navbar-height - 12rem);
     }
 
     .tour-img {
         width: 100%;
         height: auto;
-
     }
 
     .tour-date {
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 5px;
         background: var(--clr-primary-3);
         color: var(--clr-gray-9);
         text-transform: capitalize;
@@ -353,13 +353,12 @@ service
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-
     }
 
     .tour-footer-info li {
         text-transform: capitalize;
         color: var(--clr-primary-5);
-        font-size: 0.75rem;
+        font-size: 1rem;
     }
 }
 
@@ -426,7 +425,7 @@ navbar
     width: 100%;
     background: var(--clr-white);
     box-shadow: var(--dark-shadow);
-    height: 4rem;
+    height: --navbar-height;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -529,30 +528,41 @@ img.logo-link {
     }
 
     .mobile-nav-list {
-        position: absolute;
+        position: fixed;
+        top: --navbar-height;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - --navbar-height);
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100%;
         padding-top: 30px;
         gap: 2rem;
         font-size: 1.2rem;
-        margin-top: 4rem;
-        text-align: center;
+        transition: var(--transition);
+        transform: translateX(100%);
     }
 
     .mobile-nav-list.active {
-        transform: translateX(100%);
-        position: absolute;
-        top: 80px;
+        position: fixed;
+        top: --navbar-height;
+        transform: translateX(0);
         bottom: 0;
-        left: 0;
+        right: 0;
         width: 100%;
         background: var(--clr-primary-2);
         text-align: center;
         display: flex;
-        flex-direction: flex-column;
+        flex-direction: column;
         align-items: center;
+        opacity: 0.3;
+    }
+
+    .mobile-nav-link:hover {
+        display: block;
+        color: var(--clr-primary-9);
+        background: var(--clr-primary-5);
+        cursor: point;
     }
 }
 
@@ -571,7 +581,7 @@ Hero section1
         height: 85vh;
         width: 98vw;
         background: linear-gradient(var(--clr-primary-1), rgba(0, 0, 0, 0.1)), url("images/mount_fuji_night.jpg") center/cover no-repeat;
-        margin-top: 4rem;
+        margin-top: --navbar-height;
     }
 
     .hero-banner {
@@ -620,7 +630,7 @@ Hero section1
         height: 85vh;
         width: 98vw;
         background: var(--clr-primary-6);
-        margin-top: 4rem;
+        margin-top: --navbar-height;
     }
 
     .hero-banner {
