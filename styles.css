@@ -32,7 +32,7 @@
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
-    --navbar-height: --navbar-height;
+    --navbar-height: 4rem;
 }
 
 /* ===========global setting============= */
@@ -70,13 +70,13 @@ h2 {
 
 .section {
     padding: 5rem, 0;
-    scroll-margin-top: --navbar-height;
+    scroll-margin-top: var(--navbar-height);
     /* height: 95vh; */
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: --navbar-height;
+    margin-bottom: var(--navbar-height);
 }
 
 .section-title h2 {
@@ -165,7 +165,7 @@ service
 @media(min-width:768px) {
     .section-center.services-center {
         display: flex;
-        margin-bottom: --navbar-height;
+        margin-bottom: var(--navbar-height);
     }
 
     article.service {
@@ -180,7 +180,7 @@ service
         background-color: var(--clr-primary-5);
         color: var(--clr-primary-10);
         padding: 0.5rem;
-        height: --navbar-height;
+        height: var(--navbar-height);
     }
 
     .service-info {
@@ -194,7 +194,7 @@ service
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin-bottom: --navbar-height;
+        margin-bottom: var(--navbar-height);
     }
 
     .service-icon {
@@ -203,7 +203,7 @@ service
         background-color: var(--clr-primary-5);
         color: var(--clr-primary-10);
         padding: 0.5rem;
-        height: --navbar-height;
+        height: var(--navbar-height);
         margin-bottom: 10px;
     }
 
@@ -231,7 +231,7 @@ service
     }
 
     .tour-card {
-        width: calc(100vw - 2rem) / 3;
+        width: 30%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -297,13 +297,10 @@ service
     .section-center.featured-center {
         display: flex;
         flex-direction: column;
-        max-width: 1170px;
-
     }
 
     .tour-card {
         width: 98%;
-        /* width: 350px; */
         display: flex;
         flex-direction: column;
         transition: var(--transition);
@@ -321,7 +318,7 @@ service
     .tour-img-container {
         flex: 1 0 30%;
         position: relative;
-        height: calc(100vh - --navbar-height - 12rem);
+        height: calc(100vh - var(--navbar-height) - 12rem);
     }
 
     .tour-img {
@@ -425,7 +422,7 @@ navbar
     width: 100%;
     background: var(--clr-white);
     box-shadow: var(--dark-shadow);
-    height: --navbar-height;
+    height: var(--navbar-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -529,23 +526,24 @@ img.logo-link {
 
     .mobile-nav-list {
         position: fixed;
-        top: --navbar-height;
+        top: var(--navbar-height);
         right: -100%;
         width: 100%;
-        height: calc(100vh - --navbar-height);
+        height: calc(100vh - var(--navbar-height));
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: 30px;
         gap: 2rem;
         font-size: 1.2rem;
+        text-align: center;
         transition: var(--transition);
         transform: translateX(100%);
     }
 
     .mobile-nav-list.active {
         position: fixed;
-        top: --navbar-height;
+        top: var(--navbar-height);
         transform: translateX(0);
         bottom: 0;
         right: 0;
@@ -555,14 +553,14 @@ img.logo-link {
         display: flex;
         flex-direction: column;
         align-items: center;
-        opacity: 0.3;
+        opacity: 0.6;
     }
 
     .mobile-nav-link:hover {
         display: block;
         color: var(--clr-primary-9);
         background: var(--clr-primary-5);
-        cursor: point;
+        cursor: pointer;
     }
 }
 
@@ -581,7 +579,7 @@ Hero section1
         height: 85vh;
         width: 98vw;
         background: linear-gradient(var(--clr-primary-1), rgba(0, 0, 0, 0.1)), url("images/mount_fuji_night.jpg") center/cover no-repeat;
-        margin-top: --navbar-height;
+        margin-top: var(--navbar-height);
     }
 
     .hero-banner {
@@ -630,7 +628,7 @@ Hero section1
         height: 85vh;
         width: 98vw;
         background: var(--clr-primary-6);
-        margin-top: --navbar-height;
+        margin-top: var(--navbar-height);
     }
 
     .hero-banner {
