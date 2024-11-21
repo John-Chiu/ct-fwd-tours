@@ -383,6 +383,7 @@ service
     justify-content: center;
     margin-bottom: 0.5rem;
     flex-wrap: wrap;
+    gap: 50px
 }
 
 .footer-link {
@@ -448,6 +449,7 @@ navbar
 /* nav-list ul all the links */
 .nav-list {
     display: flex;
+    gap: 50px
 }
 
 /* links item */
@@ -524,7 +526,8 @@ img.logo-link {
     .fa-bars {
         font-size: 1.5rem;
         width: 100%;
-        color: var(--clr-primary-6);
+        /* color: var(--clr-primary-6); */
+        color: var(--clr-gray-10);
     }
 
     .nav-mobile-toggle {

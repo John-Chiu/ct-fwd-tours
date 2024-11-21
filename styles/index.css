@@ -527,7 +527,7 @@ img.logo-link {
     .fa-bars {
         font-size: 1.5rem;
         width: 100%;
-        color: var(--clr-primary-6);
+        /* color: var(--clr-primary-6); */
         color: var(--clr-gray-10);
     }
 
